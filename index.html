@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langton's Ant Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="controls">Controls</button>
+            <button class="tab-btn" data-tab="customize">Customize</button>
+        </div>
+        
+        <div class="panel" id="controls-panel">
+            <div class="controls">
+                <div class="speed-control">
+                    <label for="speed">Speed:</label>
+                    <input type="range" id="speed" min="1" max="500" value="20" title="Adjust simulation speed">
+                    <span id="speed-value">20</span>
+                    <span id="turbo-indicator" class="hidden">TURBO</span>
+                </div>
+                <button id="start">Start</button>
+                <button id="pause">Pause</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+        
+        <div class="panel hidden" id="customize-panel">
+            <div class="customize-controls">
+                <h3>Customize Rules</h3>
+                
+                <div class="rule-option">
+                    <label for="ant-color">Ant Color:</label>
+                    <input type="color" id="ant-color" value="#FF0000">
+                </div>
+                
+                <div class="rule-option">
+                    <label for="white-direction">On White:</label>
+                    <select id="white-direction">
+                        <option value="right">Turn Right</option>
+                        <option value="left">Turn Left</option>
+                        <option value="180">Turn 180°</option>
+                        <option value="none">No Turn</option>
+                    </select>
+                </div>
+                
+                <div class="rule-option">
+                    <label for="black-direction">On Black:</label>
+                    <select id="black-direction">
+                        <option value="left">Turn Left</option>
+                        <option value="right">Turn Right</option>
+                        <option value="180">Turn 180°</option>
+                        <option value="none">No Turn</option>
+                    </select>
+                </div>
+                
+                <div class="rule-option">
+                    <label for="multi-color">Multi-Color Mode:</label>
+                    <input type="checkbox" id="multi-color">
+                </div>
+                
+                <div class="rule-option" id="color-count-container">
+                    <label for="color-count">Number of Colors:</label>
+                    <input type="range" id="color-count" min="2" max="8" value="2" title="Set number of colors">
+                    <span id="color-count-value">2</span>
+                </div>
+                
+                <button id="randomize" class="randomize-btn">Randomize</button>
+                <button id="apply" class="apply-btn">Apply</button>
+            </div>
+        </div>
+        
+        <canvas id="grid"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
